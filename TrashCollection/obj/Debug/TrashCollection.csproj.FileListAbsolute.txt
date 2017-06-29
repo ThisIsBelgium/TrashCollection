@@ -162,3 +162,6 @@ C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\bin\Micro
 C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.csprojResolveAssemblyReference.cache
 C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.dll
 C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.pdb
+C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.Migrations.initialmigration.resources
+C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.csproj.GenerateResource.Cache
+C:\Users\wheeler\Desktop\School\C# git\TrashCollection\TrashCollection\obj\Debug\TrashCollection.Migrations.AddedUserInfo.resources
