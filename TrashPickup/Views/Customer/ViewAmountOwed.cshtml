@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TrashPickup.Models.ApplicationUser>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "ViewAmountOwed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Amount Owed</h2>
+
+
+
+       @try{
+            if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().AmountOwed != 0)
+            {
+                <h4>You owe $@Model.Where(item => item.UserName == User.Identity.GetUserName()).First().AmountOwed </h4>
+                }
+            }
+       catch
+            {
+                <h4> You have no remaining payments.</h4>
+            }
+
+
+
+        
+    
+   

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<TrashPickup.Models.ApplicationUser>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().FirstName!</h2>
+
+<h4>Today is @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().CurrentDay.</h4>
+
+<p>
+    @Html.ActionLink("View Map", "MapView")
+</p>
+
+<p>
+    @Html.ActionLink("View my Customers", "EmployeeCustomersView")
+</p>
+
+<p>
+    @Html.ActionLink("Set Current Day", "SetCurrentDayView")
+</p>
+
+<h2 id="TableTitle">My Information</h2>
+
+<style> #TableTitle
+ {
+     float:left;
+     padding:20px;
+ }
+
+     </style>
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Area Code
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+            Day of Pickup
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Email Confirmed
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Phone Number Confirmed
+        </th>
+        <th>
+            Username
+        </th>
+        <th></th>
+    </tr>
+
+   
+        <tr>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().FirstName
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().LastName
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().Address
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().AreaCode
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().UserRoles
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().DayOfWeek
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().Email
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().EmailConfirmed
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().ContactNumber
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().PhoneNumberConfirmed
+            </td>
+            <td>
+                @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().UserName
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit") 
+                @Html.ActionLink("Details", "Details") 
+                @Html.ActionLink("Delete", "Delete")
+            </td>
+        </tr>
+    
+
+</table>
+
+
+

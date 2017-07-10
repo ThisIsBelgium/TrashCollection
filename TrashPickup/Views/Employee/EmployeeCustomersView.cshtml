@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TrashPickup.Models.ApplicationUser>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "EmployeeCustomersView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Customers</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Area Code
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            State
+        </th>       
+        <th>
+            Email
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.UserRoles == "Customer" && item.AreaCode == "53211" && item.DayOfWeek == item.CurrentDay)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>          
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+        </tr>
+        } }
+</table>
