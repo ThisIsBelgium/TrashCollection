@@ -132,17 +132,6 @@
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
             var route = response.routes[0];
-            var summaryPanel = document.getElementById('directions-panel');
-            summaryPanel.innerHTML = '';
-            // For each route, display summary information.
-            for (var i = 0; i < route.legs.length; i++) {
-              var routeSegment = i + 1;
-              summaryPanel.innerHTML += '<b>Route Number: ' + routeSegment +
-                  '</b><br>';
-              summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-              summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-              summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-            }
           } else {
             window.alert('Directions request failed due to ' + status);
           }
@@ -151,6 +140,6 @@
     </script>
 
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtA7oJhzMM5lb5LZglWfl3yVQfAmSXkiI&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Tu2PaBDJ5NEsNM539bFH4IPDFIXgBn8&callback=initMap">
     </script>
 </body>
