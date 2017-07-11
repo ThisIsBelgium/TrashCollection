@@ -23,9 +23,7 @@ namespace TrashPickup.Models
         public string City { get; set; }
         public string State { get; set; }
         public double AmountOwed { get; set; }
-        public int AmountDaysOwed { get; set; }
-        public string DayCounter  { get; set; }
-        public int WeekCounter { get; set; }
+        public int AmountofDaysUnpaid { get; set; }
         public string CurrentDay { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

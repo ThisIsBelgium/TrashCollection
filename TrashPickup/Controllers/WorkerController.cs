@@ -13,7 +13,7 @@ namespace Trash_Collector.Controllers
     public class EmployeeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
 
         // GET: Employee
         public ActionResult Index()
@@ -48,20 +48,6 @@ namespace Trash_Collector.Controllers
             foreach (ApplicationUser user in db.Users)
             {
                 user.CurrentDay = worker.CurrentDay;
-            }
-            db.SaveChanges();
-
-            foreach (ApplicationUser user in db.Users)
-            {
-                if (user.DayOfWeek == worker.CurrentDay && user.WeekCounter <= 0)
-                {
-                    user.AmountOwed += 35;
-                }
-                else if (user.DayOfWeek == worker.CurrentDay && user.WeekCounter >= 0)
-                {
-                    user.WeekCounter -= 1;
-                }
-
             }
             db.SaveChanges();
             return RedirectToAction("Index", "Employee", db.Users.ToList());

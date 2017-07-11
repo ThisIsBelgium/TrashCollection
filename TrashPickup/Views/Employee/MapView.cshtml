@@ -7,7 +7,7 @@
 
 
 <div id="map" style="width:650px;height:500px;"></div>
-<h2 id="Title">Google map view of customers</h2>
+<h2 id="Title">Google map</h2>
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -75,34 +75,25 @@
             <b>Start:</b>
 
             <select id="start">
-                @*Admin Enter: Employee starting location*@
-                <option value="6320 McHenry St, Burlington, WI 53105">6320 McHenry St</option>
+                <option value="1534 N Cass St, Milwaukee, WI 53211">1534 N Cass st</option>
 
             </select>
             <br>
             <b>Waypoints:</b> <br>
-            <i>(Ctrl+Click or Cmd+Click to set routes)</i> <br>
+            <i>(Ctrl+Click to select)</i> <br>
             <select multiple id="waypoints">
-               @*Admin Enter: Employee route locations*@
-                <option value="440 Dardis Dr, Burlington, WI 53105">440 Dardis Dr</option>
-                <option value="539 Rose Ann Dr, Burlington, WI 53105">539 Rose Ann Dr</option>
-                <option value="134 Conkey St, Burlington, WI 53105">134 Conkey St</option>
-                <option value="335 Park Ave, Burlington, WI 53105">1335 Park Ave</option>
-                <option value="321 Hickory Dr, Burlington, WI 53105">321 Hickory Dr</option>
-                <option value="368 E Market Str, Burlington, WI 53105">368 E Market St</option>
-                <option value="399 Travellers Run, Burlington, WI 53105">399 Travellers Runr</option>
-        
+                <option value="1325 N Van Buren St, Milwaukee, WI 53211">1325 N Van Buren St</option>
+                <option value="1013 E Kewaunee St, Milwaukee, WI 53211">1013 E Kewaunee St</option>
             </select>
             <br>
             <b>End:</b>
             <select id="end">
-                <option value="6320 McHenry St, Burlington, WI 53105">6320 McHenry St</option>
+                <option value="1534 N Cass St, Milwaukee, WI 53211">1534 N Cass st</option>
 
-            </select>
+            </select> 
             <br>
             <input type="submit" id="submit">
         </div>
-        <div id="directions-panel"></div>
     </div>
     <script>
       function initMap() {
@@ -110,7 +101,7 @@
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 6,
-          center: {lat: 41.85, lng: -87.65}
+          center: {lat: 43.05, lng: -87.90}
         });
         directionsDisplay.setMap(map);
 
@@ -120,26 +111,43 @@
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-          var waypts = [];
-          var checkboxArray = document.getElementById('waypoints');
-          for (var i = 0; i < checkboxArray.length; i++) {
-              if (checkboxArray.options[i].selected) {
-                  waypts.push({
-                      location: checkboxArray[i].value,
-                      stopover: true
-                  });
-              }
+        var waypts = [];
+        var checkboxArray = document.getElementById('waypoints');
+        for (var i = 0; i < checkboxArray.length; i++) {
+          if (checkboxArray.options[i].selected) {
+            waypts.push({
+              location: checkboxArray[i].value,
+              stopover: true
+            });
           }
+        }
 
-          directionsService.route({
-              origin: document.getElementById('start').value,
-              destination: document.getElementById('end').value,
-              waypoints: waypts,
-              optimizeWaypoints: true,
-              travelMode: 'DRIVING'
-          })
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          waypoints: waypts,
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+            var route = response.routes[0];
+            var summaryPanel = document.getElementById('directions-panel');
+            summaryPanel.innerHTML = '';
+            // For each route, display summary information.
+            for (var i = 0; i < route.legs.length; i++) {
+              var routeSegment = i + 1;
+              summaryPanel.innerHTML += '<b>Route Number: ' + routeSegment +
+                  '</b><br>';
+              summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+              summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+              summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+            }
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
       }
-      
     </script>
 
     <script async defer

@@ -168,7 +168,6 @@ namespace TrashPickup.Controllers
                     Address = model.Address,
                     City = model.City,
                     State = model.State,
-                    ContactNumber = model.ContactNumber,
                     AreaCode = model.AreaCode,
                     Password = model.Password,
                     ConfirmPassword = model.ConfirmPassword,
