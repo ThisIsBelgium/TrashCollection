@@ -42,23 +42,6 @@ namespace Trash_Collector.Controllers
             return View(db.Users.ToList());
         }
 
-        public ActionResult SetVacationDay()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult SetVacationDay(RegisterViewModel model)
-        {
-            var customer = db.Users.Where(item => item.UserName == User.Identity.Name).First();
-
-            customer.DayOfWeek = model.DayOfWeek;
-            db.SaveChanges();
-            return RedirectToAction("Index", "Customer", db.Users.ToList());
-        }
-
         // GET: Customer/Details/5
         public ActionResult Details(string id)
         {
