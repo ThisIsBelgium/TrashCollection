@@ -207,53 +207,33 @@
     <Compile Include="Migrations\201706281226036_initial migration.Designer.cs">
       <DependentUpon>201706281226036_initial migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706282226479_update-database.cs" />
-    <Compile Include="Migrations\201706282226479_update-database.Designer.cs">
-      <DependentUpon>201706282226479_update-database.cs</DependentUpon>
+    <Compile Include="Migrations\201706282226479_update database.cs" />
+    <Compile Include="Migrations\201706282226479_update database.Designer.cs">
+      <DependentUpon>201706282226479_update database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706301457469_added user info to models.cs" />
-    <Compile Include="Migrations\201706301457469_added user info to models.Designer.cs">
-      <DependentUpon>201706301457469_added user info to models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707041829156_Roles hooked up to pages.cs" />
-    <Compile Include="Migrations\201707041829156_Roles hooked up to pages.Designer.cs">
-      <DependentUpon>201707041829156_Roles hooked up to pages.cs</DependentUpon>
+    <Compile Include="Migrations\201706301457469_added user infos.cs" />
+    <Compile Include="Migrations\201706301457469_added user infos.Designer.cs">
+      <DependentUpon>201706301457469_added user infos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201707041852599_Updated roles.cs" />
     <Compile Include="Migrations\201707041852599_Updated roles.Designer.cs">
       <DependentUpon>201707041852599_Updated roles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707051321338_Added ViewMap View.cs" />
-    <Compile Include="Migrations\201707051321338_Added ViewMap View.Designer.cs">
-      <DependentUpon>201707051321338_Added ViewMap View.cs</DependentUpon>
+    <Compile Include="Migrations\201707051321338_Added Map.cs" />
+    <Compile Include="Migrations\201707051321338_Added Map.Designer.cs">
+      <DependentUpon>201707051321338_Added Map.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201707052127246_added city and state.cs" />
     <Compile Include="Migrations\201707052127246_added city and state.Designer.cs">
       <DependentUpon>201707052127246_added city and state.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707052149264_added city and state.cs" />
-    <Compile Include="Migrations\201707052149264_added city and state.Designer.cs">
-      <DependentUpon>201707052149264_added city and state.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707052156289_state and city added.cs" />
-    <Compile Include="Migrations\201707052156289_state and city added.Designer.cs">
-      <DependentUpon>201707052156289_state and city added.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201707061953173_added AmountOwed.cs" />
     <Compile Include="Migrations\201707061953173_added AmountOwed.Designer.cs">
       <DependentUpon>201707061953173_added AmountOwed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707061959461_added AmountDaysOwed.cs" />
-    <Compile Include="Migrations\201707061959461_added AmountDaysOwed.Designer.cs">
-      <DependentUpon>201707061959461_added AmountDaysOwed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707070130053_day counter, week counter, currentday.cs" />
-    <Compile Include="Migrations\201707070130053_day counter, week counter, currentday.Designer.cs">
-      <DependentUpon>201707070130053_day counter, week counter, currentday.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707071244203_Changed AmountOwed to double.cs" />
-    <Compile Include="Migrations\201707071244203_Changed AmountOwed to double.Designer.cs">
-      <DependentUpon>201707071244203_Changed AmountOwed to double.cs</DependentUpon>
+    <Compile Include="Migrations\201707070130053_collection info.cs" />
+    <Compile Include="Migrations\201707070130053_collection info.Designer.cs">
+      <DependentUpon>201707070130053_collection info.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
@@ -343,41 +323,26 @@
     <EmbeddedResource Include="Migrations\201706281226036_initial migration.resx">
       <DependentUpon>201706281226036_initial migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706282226479_update-database.resx">
-      <DependentUpon>201706282226479_update-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706282226479_update database.resx">
+      <DependentUpon>201706282226479_update database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706301457469_added user info to models.resx">
-      <DependentUpon>201706301457469_added user info to models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707041829156_Roles hooked up to pages.resx">
-      <DependentUpon>201707041829156_Roles hooked up to pages.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706301457469_added user infos.resx">
+      <DependentUpon>201706301457469_added user infos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707041852599_Updated roles.resx">
       <DependentUpon>201707041852599_Updated roles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707051321338_Added ViewMap View.resx">
-      <DependentUpon>201707051321338_Added ViewMap View.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707051321338_Added Map.resx">
+      <DependentUpon>201707051321338_Added Map.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707052127246_added city and state.resx">
       <DependentUpon>201707052127246_added city and state.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707052149264_added city and state.resx">
-      <DependentUpon>201707052149264_added city and state.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707052156289_state and city added.resx">
-      <DependentUpon>201707052156289_state and city added.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707061953173_added AmountOwed.resx">
       <DependentUpon>201707061953173_added AmountOwed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707061959461_added AmountDaysOwed.resx">
-      <DependentUpon>201707061959461_added AmountDaysOwed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707070130053_day counter, week counter, currentday.resx">
-      <DependentUpon>201707070130053_day counter, week counter, currentday.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707071244203_Changed AmountOwed to double.resx">
-      <DependentUpon>201707071244203_Changed AmountOwed to double.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707070130053_collection info.resx">
+      <DependentUpon>201707070130053_collection info.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
